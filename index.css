@@ -64,14 +64,23 @@ html,body{
     left: 65px;
     top: 50px;
     animation: 1s myRun 1;
+    -webkit-animation:  1s myRun 1;
 }
 @keyframes myRun {
-    0%{transform: translate(-300px,100px);opacity: 0.3}
-    20%{transform: translate(0px,35px);opacity: 1}
-    40%{transform: translate(10px,30px);opacity: 0.5}
-    60%{transform: translate(15px,25px);opacity: 1}
-    80%{transform: translate(20px,20px);opacity: 0.3}
-    100%{transform:  translate(25px,10px);opacity: 1}
+    0%{transform: translate(-300px,100px);-webkit-transform: translate(-300px,100px);opacity: 0.3}
+    20%{transform: translate(0px,35px);-webkit-transform:translate(0px,35px);opacity: 1}
+    40%{transform: translate(10px,30px);-webkit-transform:translate(10px,30px);opacity: 0.5}
+    60%{transform: translate(15px,25px);-webkit-transform:translate(15px,25px);opacity: 1}
+    80%{transform: translate(20px,20px);-webkit-transform:translate(20px,20px);opacity: 0.3}
+    100%{transform:  translate(25px,10px);-webkit-transform: translate(25px,10px);opacity: 1}
+}
+@-webkit-keyframes  myRun {
+    0%{transform: translate(-300px,100px);-webkit-transform: translate(-300px,100px);opacity: 0.3}
+    20%{transform: translate(0px,35px);-webkit-transform:translate(0px,35px);opacity: 1}
+    40%{transform: translate(10px,30px);-webkit-transform:translate(10px,30px);opacity: 0.5}
+    60%{transform: translate(15px,25px);-webkit-transform:translate(15px,25px);opacity: 1}
+    80%{transform: translate(20px,20px);-webkit-transform:translate(20px,20px);opacity: 0.3}
+    100%{transform:  translate(25px,10px);-webkit-transform: translate(25px,10px);opacity: 1}
 }
 .liChild1 .liChild1_center{
     position: absolute;
@@ -86,13 +95,18 @@ html,body{
     font-size: 45px;
     font-family: Arial, Helvetica, sans-serif;
     animation: 2s mySpan 1;
+    -webkit-animation:  2s mySpan 1;
 }
 .liChild1_center li span{
     margin: 106px;
 }
 @keyframes mySpan {
-    0%{transform: translate(800px,0)}
-    100%{transform: translate(0,0)}
+    0%{transform: translate(800px,0);-webkit-transform:translate(800px,0); }
+    100%{transform: translate(0,0);-webkit-transform:translate(0,0);}
+}
+@-webkit-keyframes mySpan {
+    0%{transform: translate(800px,0);-webkit-transform:translate(800px,0);}
+    100%{transform: translate(0,0);-webkit-transform:translate(0,0);}
 }
 .liChild1_bottom img{
     width: 400px;
@@ -101,13 +115,18 @@ html,body{
     bottom: 5px;
     left: 220px;
     animation:2s myImg 2;
+    -webkit-animation: 2s myImg 2;
 }
 @keyframes myImg {
-    0%{opacity: 0.5;transform: scale(1)}
-    40%{opacity: 1;transform: scale(1.5)}
-    100%{transform: scale(1)}
+    0%{opacity: 0.5;transform: scale(1);-webkit-transform:scale(1);}
+    40%{opacity: 1;transform: scale(1.5);-webkit-transform:scale(1.5);}
+    100%{transform: scale(1);-webkit-transform:scale(1);}
 }
-
+@-webkit-keyframes myImg {
+    0%{opacity: 0.5;transform: scale(1);-webkit-transform:scale(1);}
+    40%{opacity: 1;transform: scale(1.5);-webkit-transform:scale(1.5);}
+    100%{transform: scale(1);-webkit-transform:scale(1);}
+}
 
 .liChild2{
     width: 100%;
@@ -133,21 +152,27 @@ html,body{
 }
 .liChild2 .infomation li:nth-child(1){
     animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
 }
 .liChild2 .infomation li:nth-child(2){
     animation-delay: 1s;
+    -webkit-animation-delay: 1s;
 }
 .liChild2 .infomation li:nth-child(3){
     animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
 }
 .liChild2 .infomation li:nth-child(4){
     animation-delay: 2s;
+    -webkit-animation-delay: 2s;
 }
 .liChild2 .infomation li:nth-child(5){
     animation-delay: 2.5s;
+    -webkit-animation-delay: 2.5s;
 }
 .liChild2 .infomation li:nth-child(6){
     animation-delay: 3s;
+    -webkit-animation-delay: 3s;
 }
 
 .liChild3,.liChild4,.liChild5{
@@ -163,6 +188,7 @@ html,body{
     color: #c00000;
     margin-bottom: 20px;
     animation: 1s myTit3 3;
+    -webkit-animation: 1s myTit3 3;
 }
 @keyframes myTit3 {
     0%{transform: scale(1);-webkit-transform: scale(1);}
@@ -197,26 +223,32 @@ html,body{
 .liChild3 ul li:nth-child(1){
     float: left;
     animation: 1s myLiSkew1 1 1s;
+    -webkit-animation:  1s myLiSkew1 1 1s;
 }
 .liChild3 ul li:nth-child(2){
     float: right;
     animation: 1s myLiSkew2 1 1.5s;
+    -webkit-animation: 1s myLiSkew2 1 1.5s ;
 }
 .liChild3 ul li:nth-child(3){
     float: left;
     animation: 1s myLiSkew1 1 2s;
+    -webkit-animation: 1s myLiSkew1 1 2s ;
 }
 .liChild3 ul li:nth-child(4){
     float: right;
     animation: 1s myLiSkew2 1 2.5s;
+    -webkit-animation:  1s myLiSkew2 1 2.5s;
 }
 .liChild3 ul li:nth-child(5){
     float: left;
     animation: 1s myLiSkew1 1 3s;
+    -webkit-animation: 1s myLiSkew1 1 3s;
 }
 .liChild3 ul li:nth-child(6){
     float: right;
     animation: 1s myLiSkew2 1 3.5s;
+    -webkit-animation:  1s myLiSkew2 1 3.5s;
 }
 @keyframes myLiSkew1 {
     0%{transform:translate(-400px);-webkit-transform:translate(-400px);opacity: 0}
@@ -259,30 +291,34 @@ html,body{
      top: 240px;
      left: 225px;
     animation: 1s myRun1 4 1s;
+    -webkit-animation:  1s myRun1 4 1s;
  }
 .liChild4 ul li:nth-child(2){
     position: absolute;
     top: 430px;
     left: 20px;
     animation: 1s myRun1 3 2s;
+    -webkit-animation: 1s myRun1 3 2s;
 }
 .liChild4 ul li:nth-child(3){
     position: absolute;
     top: 430px;
     right: 20px;
     animation: 1s myRun1 2 3s;
+    -webkit-animation: 1s myRun1 2 3s;
 }
 .liChild4 ul li:nth-child(4){
     position: absolute;
     bottom: 100px;
     left: 225px;
     animation: 1s myRun1 1 4s;
+    -webkit-animation: 1s myRun1 1 4s;;
 }
 @keyframes myRun1 {
     0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);opacity: 0}
     100%{-webkit-transform: rotate(360deg);transform: rotate(360deg);opacity: 1}
 }
-@-webkit-keyframes myRun {
+@-webkit-keyframes myRun1 {
     0%{-webkit-transform: rotate(0deg);transform: rotate(0deg);opacity: 0}
     100%{-webkit-transform: rotate(360deg);transform: rotate(360deg);opacity: 1}
 }
@@ -306,14 +342,17 @@ html,body{
 }
 .liChild5 ul li:nth-child(2) img{
     animation: 1s mySwing infinite;
+    -webkit-animation:  .3s mySwing infinite;
 }
 @-webkit-keyframes mySwing {
     0%{-webkit-transform: skew(0deg);transform: skew(0deg);}
-    50%{-webkit-transform: skew(0deg);transform: skew(30deg);}
+    30%{-webkit-transform: skew(30deg);transform: skew(30deg);}
+    70%{-webkit-transform: skew(-30deg);transform: skew(-30deg);}
     100%{-webkit-transform: skew(0deg);transform: skew(0deg);}
 }
 @keyframes mySwing {
     0%{-webkit-transform: skew(0deg);transform: skew(0deg);}
-    50%{-webkit-transform: skew(0deg);transform: skew(30deg);}
+    30%{-webkit-transform: skew(30deg);transform: skew(30deg);}
+    70%{-webkit-transform: skew(-30deg);transform: skew(-30deg);}
     100%{-webkit-transform: skew(0deg);transform: skew(0deg);}
 }
