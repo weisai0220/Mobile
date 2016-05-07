@@ -4,12 +4,14 @@ var winW = document.documentElement.clientWidth;
 var winH = document.documentElement.clientHeight;
 var desW = 640;
 var desH = 960;
+window.onload = function () {
+    oLis[0].firstElementChild.id = "liChild1";
+}
 if(winW/winH<desW/desH){
     main.style.webkitTransform = 'scale('+winH/desH+')';
 }else{
     main.style.webkitTransform = 'scale('+winW/desW+')';
 }
-
 [].forEach.call(oLis,function(){
     var oLi = arguments[0];
     oLi.index = arguments[1];
@@ -38,6 +40,7 @@ function move(e){
             arguments[0].style.display = 'none';
         }
         arguments[0].className = '';
+        arguments[0].firstElementChild.id='';
     })
     if(movePos>0){
         var moveLen = -480 + movePos;
@@ -57,8 +60,29 @@ function end(e){
         oLis[this.prevsIndex].style.webkitTransform = 'translate(0,0)';
         oLis[this.prevsIndex].style.webkitTransition = '1s';
         oLis[this.prevsIndex].addEventListener('webkitTransitionEnd',function(){
-            this.style.webkitTransition = '';
+            if (e.target.tagName == "LI") {
+                this.style.webkitTransition = "";
+            }
+            this.firstElementChild.id = "liChild" + (this.index + 1);
         },false);
         this.flag = false;
     }
 }
+var musicBtn = document.getElementById("musicBtn");
+var musicAudio = document.getElementById("audio1");
+window.addEventListener("load", function () {
+    musicAudio.play();
+    musicAudio.addEventListener("canplay", function () {
+        musicBtn.style.display = "block";
+        musicBtn.className = "music move";
+    }, false);
+    musicBtn.addEventListener("touchend", function () {
+        if (musicAudio.paused) {
+            musicAudio.play();
+            musicBtn.className = "music move";
+        } else {
+            musicAudio.pause();
+            musicBtn.className = "music";
+        }
+    }, false);
+}, false);
