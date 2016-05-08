@@ -216,7 +216,7 @@ html, body {
     }
 }
 
-@-webkit-keyframes myImg {
+@-webkit-keyframes myImg1 {
     0% {
         opacity: 0.5;
         transform: scale(1);
